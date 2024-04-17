@@ -32,21 +32,14 @@ document.querySelector('dialog').addEventListener("submit", function(event) {
 
 
 // Read Button
-document.querySelector('.read').addEventListener("click", function(event) {
-    if (this.textContent === "Read") {
-        this.textContent = "Not Read";
-    }  else if (this.textContent === "Not Read") {
-        this.textContent = "Read";
-
-    } else {
-        this.textContent = "Rertyuioiuytrghjkad";
-
+document.querySelector('.content').addEventListener("click", function(event) {
+    if (event.target.textContent === "Read") {
+        event.target.textContent = "Not Read";
+    }  else if (event.target.textContent === "Not Read") {
+        event.target.textContent = "Read";
+    } else if (event.target.textContent === "Remove") {
+        event.target.parentNode.parentNode.removeChild(event.target.parentNode)
     }
-})
-
-// Remove Button
-document.querySelector(".remove").addEventListener("click", function(event) {
-    document.querySelector(".remove").parentNode.parentNode.removeChild(document.querySelector(".remove").parentNode)
 })
 
 // Add Card Function
